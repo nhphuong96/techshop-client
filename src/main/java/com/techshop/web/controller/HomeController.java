@@ -21,7 +21,7 @@ public class HomeController {
 	private static String GET_ALL_CATEGORY_API = Constants.PATH + "category/getAll";
 
 	public String message() {
-		return "Hello World!";
+		return "Hello World! Test Git";
 	}
 
 	public List<Category> getAllCategory() {
