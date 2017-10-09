@@ -1,0 +1,172 @@
+
+/* COMMON */
+
+strong {
+	font-weight: 700;
+}
+
+/* BODY */
+
+body {
+	margin: 0 auto;
+}
+
+/* HEADER */
+nav {
+	background: #183544;
+	box-shadow: none;
+	height: 55px;
+}
+
+nav .nav-wrapper {
+	margin: 0 auto;
+	background: none;
+	width: 100%;
+	min-width: 1200px;
+}
+
+nav .nav-wrapper ul {
+	height: 100%;
+}
+
+nav .nav-wrapper ul li {
+	min-width: 90px;
+}
+
+nav .nav-wrapper ul li a {
+	color: #fff;
+	font-size: 12px;
+}
+
+nav .nav-wrapper ul li a:hover {
+	box-sizing: border-box;
+	height: 100%;
+	border-bottom: 5px solid orange;
+	background: #fff;
+	color: #000;
+}
+
+.header {
+	margin-bottom: 10px;
+}
+
+.nav-wrapper .row {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.nav-bar-top {
+	border-bottom: 1px solid orange;
+}
+
+.nav-bar-top .nav-wrapper ul li {
+	line-height: 55px;
+}
+
+.nav-bar-top .nav-wrapper ul li:last-child a:hover {
+	border: none;
+	background: none; 
+	color: #fff;
+}
+
+.nav-bar-bottom {
+	height: 40px; 	
+}
+
+.search-area.col.s4 {
+	margin: 0;
+	width: 40%;
+}
+
+.search-area.col.s4 .search-input {
+	background: white;
+	border: 1px solid #000;
+	margin: 9px;
+	height: 35px;
+	color: #000;
+	font-size: 12px;
+	padding-left: 10px;
+}
+
+.search-area.col.s4 .search-input:focus {
+	box-shadow: none;
+}
+
+.nav-bar-bottom .nav-wrapper ul li a {
+	line-height: 40px;
+	text-align: center;
+}
+
+/* FOOTER */
+
+.page-footer {
+	background-color: #fff;
+}
+
+.page-footer .footer-copyright {
+	background: #000;
+}
+
+.page-footer .container {
+	width: 90%;
+	font-weight: 500;
+}
+
+.menu-bottom h3 {
+	font-size: 16px;
+	text-transform: uppercase;
+	color: #c12d3b !important;
+	font-weight: bold;
+}
+
+.menu-bottom td {
+	text-decoration: none;
+	color: #333;
+	line-height: 18px;
+	padding: 3px 0;
+	font-size: 85%;
+}
+
+.menu-bottom li {
+	text-decoration: none;
+	color: #333;
+	line-height: 18px;
+	padding: 3px 0;
+	font-size: 85%;
+}
+
+/* FONT ICON */
+
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 35px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}

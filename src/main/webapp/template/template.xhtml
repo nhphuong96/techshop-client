@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<title><ui:insert name="title">JSF Tutorial!</ui:insert></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		rel="stylesheet" />
+	<h:outputStylesheet library="css" name="materialize.min.css" />
+	<h:outputStylesheet library="css" name="template.css" />
+	<h:outputStylesheet library="css" name="font-awesome.min.css" />
+	<ui:insert name="css"></ui:insert>
+</h:head>
+<h:body style="background: #f0f0f0;">
+	<div class="header">
+		<nav class="nav-bar-top">
+		<div class="nav-wrapper">
+			<div class="row">
+				<div class="col s3	">
+					<a href="#{request.contextPath}/web/index.xhtml">
+					<h:graphicImage	value="/resources/images/logo.png" style="width: 250px;" /></a>
+				</div>
+				<h:form class="search-area col s4">
+					<h:inputText class="search-input"
+						p:placeholder="Tìm kiếm sản phẩm, thương hiệu, nhãn hàng mong muốn...">
+						</h:inputText>
+				</h:form>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="sass.html">Hỗ trợ khách hàng</a></li>
+					<li><a href="collapsible.html">Đăng nhập</a></li>
+					<li><a>Hotline: <span
+							style="font-weight: bold; color: red;">19001797</span></a></li>
+				</ul>
+			</div>
+		</div>
+		</nav>
+		<nav class="nav-bar-bottom">
+		<div class="nav-wrapper">
+			<div class="row">
+				<ul id="nav-mobile" class="left hide-on-med-and-down">
+					<ui:repeat value="#{homeController.allCategory}" var="category">
+						<li><h:outputLink value="#">#{category.name}</h:outputLink></li>
+					</ui:repeat>
+				</ul>
+			</div>
+		</div>
+		</nav>
+	</div>
+	<div id="content">
+		<div style="width: 90%; margin: 0 auto; min-height: 800px;">
+			<ui:insert name="content"></ui:insert>
+		</div>
+	</div>
+	<footer class="page-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col l2 s12 menu-bottom">
+				<h3>THÔNG TIN CÔNG TY</h3>
+				<ul>
+					<li>Giới thiệu công ty</li>
+					<li>Bảo hành</li>
+					<li>Trả góp</li>
+					<li>Khuyến mãi</li>
+					<li>Thẻ thành viên</li>
+					<li>Các chi nhánh</li>
+				</ul>
+			</div>
+			<div class="col l3 s12 menu-bottom">
+				<h3>HỖ TRỢ KHÁCH HÀNG</h3>
+				<ul>
+					<li>Hướng dẫn mua hàng</li>
+					<li>TRẢ GÓP 0% THẺ TÍN DỤNG SACOMBANK</li>
+					<li>TRẢ GÓP THÔNG QUA ACS</li>
+					<li>Giao hàng - Chuyển hàng</li>
+					<li>Chính sách và quy định chung</li>
+					<li>Quy định đổi hàng</li>
+					<li>TRẢ GÓP 0% BẰNG THẺ TÍN DỤNG QUỐC TẾ</li>
+				</ul>
+			</div>
+			<div class="col l2 s12 menu-bottom">
+				<h3>TIN TỨC</h3>
+				<ul>
+					<li>Tin tức</li>
+					<li>So sánh - đánh giá sản phẩm</li>
+					<li>Bảo mật thông tin</li>
+					<li>Tuyển dụng</li>
+					<li>Order Laptop USA</li>
+					<li>Liên hệ</li>
+				</ul>
+			</div>
+			<div class="col l3 s12 menu-bottom">
+				<h3>TỔNG ĐÀI HỖ TRỢ</h3>
+				<table>
+					<tr>
+						<td>HCM:</td>
+						<td><strong>08.223.55555</strong></td>
+					</tr>
+					<tr>
+						<td>HÀ NỘI:</td>
+						<td><strong>04.2200.5555</strong></td>
+					</tr>
+					<tr>
+						<td>ĐÀ NẴNG:</td>
+						<td><strong>0236.656.9999</strong></td>
+					</tr>
+					<tr>
+						<td>DEALER:</td>
+						<td><strong>08.66889888</strong></td>
+					</tr>
+					<tr>
+						<td>TRẢ GÓP:</td>
+						<td><strong>08.2211.2232</strong></td>
+					</tr>
+					<tr>
+						<td>HOTLINE:</td>
+						<td><strong>1900.2074</strong></td>
+					</tr>
+				</table>
+			</div>
+			<div class="col l2 s12 menu-bottom">
+				<h3>CHIA SẺ</h3>
+				<!-- Add font awesome icons -->
+				<a href="#" class="fa fa-facebook"></a> <a href="#"
+					class="fa fa-twitter"></a> <a href="#" class="fa fa-google"></a> <a
+					href="#" class="fa fa-linkedin"></a>
+			</div>
+		</div>
+	</div>
+	<div class="footer-copyright">
+		<div class="container">
+			© 2017 Copyright belong to NHP - HCMUP <a
+				class="grey-text text-lighten-4 right"
+				href="http://www.axonactive.com/">AXON ACTIVE VIETNAM</a>
+		</div>
+	</div>
+	</footer>
+	<h:outputScript library="js" name="jquery-3.2.1.min.js" />
+	<h:outputScript library="js" name="materialize.min.js" />
+	<ui:insert name="js"></ui:insert>
+</h:body>
+</html>
