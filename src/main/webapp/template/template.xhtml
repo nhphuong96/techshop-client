@@ -22,13 +22,13 @@
 		<div class="nav-wrapper">
 			<div class="row">
 				<div class="col s3	">
-					<a href="#{request.contextPath}/web/index.xhtml">
-					<h:graphicImage	value="/resources/images/logo.png" style="width: 250px;" /></a>
+					<a href="#{request.contextPath}/web/index.xhtml"> <h:graphicImage
+							value="/resources/images/logo.png" style="width: 250px;" /></a>
 				</div>
 				<h:form class="search-area col s4">
 					<h:inputText class="search-input"
 						p:placeholder="Tìm kiếm sản phẩm, thương hiệu, nhãn hàng mong muốn...">
-						</h:inputText>
+					</h:inputText>
 				</h:form>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 					<li><a href="sass.html">Hỗ trợ khách hàng</a></li>
@@ -42,11 +42,13 @@
 		<nav class="nav-bar-bottom">
 		<div class="nav-wrapper">
 			<div class="row">
-				<ul id="nav-mobile" class="left hide-on-med-and-down">
-					<ui:repeat value="#{homeController.allCategory}" var="category">
-						<li><h:outputLink value="#">#{category.name}</h:outputLink></li>
-					</ui:repeat>
-				</ul>
+				<div class="col s12">
+					<ul id="nav-mobile" class="left hide-on-med-and-down">
+						<ui:repeat value="#{homeController.allCategory}" var="category">
+							<li><h:outputLink value="#">#{category.name}</h:outputLink></li>
+						</ui:repeat>
+					</ul>
+				</div>
 			</div>
 		</div>
 		</nav>
