@@ -6,5 +6,5 @@ import com.techshop.web.entity.Manufacturer;
 
 public interface ManufacturerService {
 
-	public List<Manufacturer> getAllManufacturer() throws InstantiationException, IllegalAccessException;
+	public List<Manufacturer> getAllManufacturer();
 }

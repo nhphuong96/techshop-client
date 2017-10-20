@@ -120,7 +120,10 @@ div.collection {
 }
 
 #content .row.product-panel {
-	margin-top: 10px;
+}
+
+#content .row.product-grid {
+	margin-bottom: 0;
 }
 
 .row .product-panel .panel-name {
@@ -136,8 +139,9 @@ div.collection {
 .row .product-panel .see-more {
 	text-align: right;
 	vertical-align: middle;
-	padding: 5px 7px 5px 7px;
+	padding: 5px 15px 5px 15px;
 	background: white;
+	border: 1px solid #c3c;
 	float: right;
 }
 
@@ -156,10 +160,31 @@ div.collection {
 
 .product-grid .thumbnail {
 	border-radius: 0;
+	border: 1px solid #c3c;
+	padding-top: 20px;
+	min-height: 419px;
+}
+
+.product-grid .thumbnail .caption h4 {
+	min-height: 40px;
 }
 
 .product-grid .thumbnail.product-box a {
 	border-radius: 0;
 	box-shadow: none;
+}
+
+.product-grid .thumbnail.product-box .price {
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-right: 10px;
+}
+
+.product-grid .thumbnail.product-box strong {
+	font-size: 18px;
+	font-weight: 700;
+	color: red;
+	text-transform: uppercase;
 }
 

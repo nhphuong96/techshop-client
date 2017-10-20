@@ -102,82 +102,114 @@
 		<div class="row">
 			<div class="col s12">
 				<div class="row product-panel">
-						<h:outputLink styleClass="panel-name" value="#">điện thoại di động</h:outputLink>
-						<h:outputLink styleClass="see-more" value="#">Xem thêm</h:outputLink>
+					<h:outputLink styleClass="panel-name" value="#">#{homeController.mobileList.categoryId.name}</h:outputLink>
+					<h:outputLink styleClass="see-more" value="#">Xem thêm</h:outputLink>
 				</div>
 				<div class="row product-grid">
-					<div class="col s3 text-center col-sm-6 col-xs-6">
-						<div class="thumbnail product-box">
-							<h:graphicImage value="/resources/images/dummyimg.png" alt="" />
-							<div class="caption">
-								<h3>
-									<a href="#">Samsung Galaxy </a>
-								</h3>
-								<p>
-									Price : <strong>$ 3,45,900</strong>
-								</p>
-								<p>
-									<a href="#" class="btn btn-success" type="button">Add To
-										Cart</a> <a href="#" class="btn btn-primary" type="button">See
-										Details</a>
-								</p>
+					<ui:repeat value="#{homeController.mobileList.products}" var="mobile">
+						<div class="col s3 text-center col-sm-6 col-xs-6">
+							<div class="thumbnail product-box">
+								<h:graphicImage value="/resources/images/product/#{mobile.image1}"
+									alt="" style="width: 200px; min-height: 230px;"/>
+								<div class="caption">
+									<h4>
+										<a href="#">#{mobile.productName}</a>
+									</h4>
+									<p>
+										<span class="price">Giá</span><strong>#{mobile.price}</strong> VNĐ
+									</p>
+									<p>
+										<a href="#{request.contextPath}/web/product_detail.xhtml" class="btn btn-danger" type="button">Thêm vào giỏ</a>
+										 <a href="#" class="btn btn-primary" type="button">Chi tiết</a>
+									</p>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col s3 text-center col-sm-6 col-xs-6">
-						<div class="thumbnail product-box">
-							<h:graphicImage value="/resources/images/dummyimg.png" alt="" />
-							<div class="caption">
-								<h3>
-									<a href="#">Samsung Galaxy </a>
-								</h3>
-								<p>
-									Price : <strong>$ 3,45,900</strong>
-								</p>
-								<p>
-									<a href="#" class="btn btn-success" type="button">Add To
-										Cart</a> <a href="#" class="btn btn-primary" type="button">See
-										Details</a>
-								</p>
+					</ui:repeat>
+				</div>
+			</div>
+			<div class="col s12">
+				<div class="row product-panel">
+					<h:outputLink styleClass="panel-name" value="#">#{homeController.tabletList.categoryId.name}</h:outputLink>
+					<h:outputLink styleClass="see-more" value="#">Xem thêm</h:outputLink>
+				</div>
+				<div class="row product-grid">
+					<ui:repeat value="#{homeController.tabletList.products}" var="tablet">
+						<div class="col s3 text-center col-sm-6 col-xs-6">
+							<div class="thumbnail product-box">
+								<h:graphicImage value="/resources/images/product/#{tablet.image1}"
+										alt="" style="width: 200px; min-height: 230px;"/>
+								<div class="caption">
+									<h4>
+										<a href="#">#{tablet.productName}</a>
+									</h4>
+									<p>
+										<span class="price">Giá</span><strong>#{tablet.price}</strong> VNĐ
+									</p>
+									<p>
+										<a href="#" class="btn btn-danger" type="button">Thêm vào giỏ</a>
+										 <a href="#" class="btn btn-primary" type="button">Chi tiết</a>
+									</p>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col s3 text-center col-sm-6 col-xs-6">
-						<div class="thumbnail product-box">
-							<h:graphicImage value="/resources/images/dummyimg.png" alt="" />
-							<div class="caption">
-								<h3>
-									<a href="#">Samsung Galaxy </a>
-								</h3>
-								<p>
-									Price : <strong>$ 3,45,900</strong>
-								</p>
-								<p>
-									<a href="#" class="btn btn-success" type="button">Add To
-										Cart</a> <a href="#" class="btn btn-primary" type="button">See
-										Details</a>
-								</p>
+					</ui:repeat>
+				</div>
+			</div>
+			<div class="col s12">
+				<div class="row product-panel">
+					<h:outputLink styleClass="panel-name" value="#">#{homeController.laptopList.categoryId.name}</h:outputLink>
+					<h:outputLink styleClass="see-more" value="#">Xem thêm</h:outputLink>
+				</div>
+				<div class="row product-grid">
+					<ui:repeat value="#{homeController.laptopList.products}" var="laptop">
+						<div class="col s3 text-center col-sm-6 col-xs-6">
+							<div class="thumbnail product-box">
+								<h:graphicImage value="/resources/images/product/#{laptop.image1}"
+										alt="" style="width: 200px; min-height: 230px;"/>
+								<div class="caption">
+									<h4>
+										<a href="#">#{laptop.productName}</a>
+									</h4>
+									<p>
+										<span class="price">Giá</span><strong>#{laptop.price}</strong> VNĐ
+									</p>
+									<p>
+										<a href="#" class="btn btn-danger" type="button">Thêm vào giỏ</a>
+										 <a href="#" class="btn btn-primary" type="button">Chi tiết</a>
+									</p>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col s3 text-center col-sm-6 col-xs-6">
-						<div class="thumbnail product-box">
-							<h:graphicImage value="/resources/images/dummyimg.png" alt="" />
-							<div class="caption">
-								<h3>
-									<a href="#">Samsung Galaxy </a>
-								</h3>
-								<p>
-									Price : <strong>$ 3,45,900</strong>
-								</p>
-								<p>
-									<a href="#" class="btn btn-success" type="button">Add To
-										Cart</a> <a href="#" class="btn btn-primary" type="button">See
-										Details</a>
-								</p>
+					</ui:repeat>
+				</div>
+			</div>
+			<div class="col s12">
+				<div class="row product-panel">
+					<h:outputLink styleClass="panel-name" value="#">#{homeController.equipList.categoryId.name}</h:outputLink>
+					<h:outputLink styleClass="see-more" value="#">Xem thêm</h:outputLink>
+				</div>
+				<div class="row product-grid">
+					<ui:repeat value="#{homeController.equipList.products}" var="equip">
+						<div class="col s3 text-center col-sm-6 col-xs-6">
+							<div class="thumbnail product-box">
+								<h:graphicImage value="/resources/images/product/#{equip.image1}"
+										alt="" style="width: 200px; min-height: 230px;"/>
+								<div class="caption">
+									<h4>
+										<a href="#">#{equip.productName}</a>
+									</h4>
+									<p>
+										<span class="price">Giá</span><strong>#{equip.price}</strong> VNĐ
+									</p>
+									<p>
+										<a href="#" class="btn btn-danger" type="button">Thêm vào giỏ</a>
+										 <a href="#" class="btn btn-primary" type="button">Chi tiết</a>
+									</p>
+								</div>
 							</div>
 						</div>
-					</div>
+					</ui:repeat>
 				</div>
 			</div>
 		</div>

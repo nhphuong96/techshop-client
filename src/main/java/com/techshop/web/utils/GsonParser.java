@@ -10,7 +10,7 @@ public final class GsonParser {
 
 	private GsonParser() {}
 	
-	public static <T> T getResult(String api, Class<T> type) throws InstantiationException, IllegalAccessException {
+	public static <T> T getResult(String api, Class<T> type) {
 		try {
 			URL url = new URL(api);
 			InputStreamReader reader = new InputStreamReader(url.openStream(), "UTF-8");
@@ -19,7 +19,7 @@ public final class GsonParser {
 			return object;
 		}
 		catch(IOException e) {
-			return type.newInstance();
+			return null;
 		}
 	}
 	

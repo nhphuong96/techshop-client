@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="../template/template.xhtml">
+	<ui:define name="title">Trang chủ | Vi tính Hồ Phương</ui:define>
+	<ui:define name="css">
+	    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"/>
+	
+		<h:outputStylesheet library="css" name="bootstrap.css" />
+		<h:outputStylesheet library="css" name="productdetail.css" />
+	</ui:define>
+	<ui:define name="content">
+		<div class="card">
+			<div class="container-fliud">
+			<h3 class="product-title">Điện thoại iPhone 7 Plus 256GB</h3>
+				<div class="wrapper row">
+					
+					<div class="preview col-md-6">
+						
+						<div class="preview-pic tab-content">
+						  <div class="tab-pane active" style="text-align: center;" id="pic-1">
+						  		<h:graphicImage value="/resources/images/product/iphone-6s-32gb-1.png" style="width:350px;"/>
+						  </div>
+						</div>
+					</div>
+					<div class="details col-md-6">
+						
+						<p class="product-description">
+							Với thiết kế không quá nhiều thay đổi, vẫn bảo tồn vẻ đẹp truyền thống từ thời iPhone 6 Plus,  iPhone 7 Plus được trang bị nhiều nâng cấp đáng giá như camera kép, đạt chuẩn chống nước chống bụi cùng cấu hình cực mạnh.
+						</p>
+						<h4 class="price">Giá hiện tại: <span>19.490.000 VNĐ</span></h4>
+						<p class="vote"><strong>91%</strong> người mua thích sản phẩm này! <strong>(87 votes)</strong></p>
+						<h5 class="colors">màu sắc:
+							<span class="color orange not-available" data-toggle="tooltip" title="Hết hàng"></span>
+							<span class="color green"></span>
+							<span class="color blue"></span>
+						</h5>
+						<div class="action">
+							<button class="add-to-cart btn btn-danger" type="button">Thêm vào giỏ</button>
+							<button class="like btn btn-primary" type="button">yêu thích</button>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+	</ui:define>
+	<ui:define name="js">
+		<h:outputScript library="js" name="bootstrap.min.js" />
+	</ui:define>
+</ui:composition>
