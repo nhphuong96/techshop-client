@@ -1,0 +1,75 @@
+.cart-container {
+	width: 100%;
+	margin: 0 8px 0 8px;
+	background: white;
+	min-height: 500px;
+	line-height: 1.2em;
+	position: relative;
+	padding: 1em 3em 3em 3em;
+}
+
+.back-to-list:hover {
+	text-decoration: none;
+}
+
+.cart-title h3 {
+	margin-top: 0px;
+	font-weight: 600;
+	font-size: 20px;
+}
+
+.cart-title .row {
+	margin-bottom: 0;
+}
+
+.my-cart thead {
+	border-bottom: none;
+}
+
+.my-cart thead td{
+	font-size: 14px;
+	padding: 10px 0 10px 0;
+}
+
+.no-product {
+	text-align: center;
+}
+
+.no-product a {
+	margin-top: 10px;
+	background: tomato;
+	box-shadow: none;
+	border-radius: 0;
+	padding: 7px 40px 5px 40px;
+}
+
+.no-product a:hover {
+	background: orange;
+	color: white;
+	box-shadow: none;
+}
+
+.product-title {
+	font-size: 16px;
+}
+
+.product-manufacturer {
+	font-size: 12px;
+	color: grey;
+}
+
+.product-status {
+	font-size: 11px;
+	color: mediumblue;
+}
+
+tbody td {
+	vertical-align: top;
+	padding-top: 10px;
+}
+
+.my-cart .price {
+	font-size: 14px;
+	font-weight: 600;
+	text-align: center;
+}

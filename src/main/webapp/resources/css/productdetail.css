@@ -11,6 +11,10 @@ a:hover {
 	text-decoration: none;
 }
 
+.header {
+	margin-bottom: 0px;
+}
+
 .preview {
   display: -webkit-box;
   display: -webkit-flex;
@@ -56,10 +60,11 @@ a:hover {
             animation-duration: .3s; }
 
 .card {
-  margin: 30px 8px 0 8px;
+  margin: 0px 8px 0px 8px;
   background: #fff;
-  padding: 3em;
+  padding: 0 3em 3em 3em;
   line-height: 1.5em; 
+  border-radius: 0;
   box-shadow: none;
 }
 
@@ -133,6 +138,50 @@ a:hover {
     -webkit-transition: background .3s ease;
           transition: background .3s ease;
      }
+
+.breadcrumb {
+	font-size: 14px;
+	margin: 0px 8px 0px 0px;
+	padding: 15px 0 15px 0;
+	background: white;
+	border-radius: 0;
+}
+
+.product-info h3 {
+	margin: 0;
+	margin-bottom: 20px;
+}
+
+.html-description p {
+	text-align: justify;
+	font-size: 16px;
+}
+
+table td {
+	font-size: 14px;
+	padding: 10px 5px 10px 5px;
+}
+
+table.bordered>tbody>tr:last-child {
+	border-bottom: 0;
+}
+
+.specification-detail {
+	width: 100%;
+	border: 1px solid #288ad6;
+	padding: 5px 50px 5px 50px;
+	margin-top: 10px;
+	border-radius: 4px;
+	text-align: center;
+	margin: 10px;
+	transition: background-color .3s;
+}
+
+.specification-detail:hover, .specification-detail:focus, .specification-detail:active {
+	background: #288ad6;
+	color: white;
+	text-decoration: none;
+}
 
 .not-available {
   text-align: center;

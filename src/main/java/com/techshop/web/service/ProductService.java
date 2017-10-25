@@ -4,11 +4,12 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 
-import com.techshop.web.entity.ProductInformation;
+import com.techshop.web.model.ProductModel;
 
 @Stateless
 public interface ProductService {
 	public ProductGroup getProductGroupById(Long categoryType);
 	public ProductGroup getProductGroupByAlias(String alias);
-	public List<ProductInformation> getProductsByCategory(Long categoryId);
+	public List<ProductModel> getProductsByCategory(Long categoryId);
+	public ProductModel getProductsByAlias(String alias);
 }

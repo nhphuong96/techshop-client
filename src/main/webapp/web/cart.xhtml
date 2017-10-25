@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="../template/template.xhtml">
+	<ui:define name="title">Giỏ hàng</ui:define>
+	<ui:define name="css">
+		<link
+			href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+			rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700"
+			rel="stylesheet" />
+
+		<h:outputStylesheet library="css" name="bootstrap.css" />
+		<h:outputStylesheet library="css" name="cart.css" />
+	</ui:define>
+	<ui:define name="content">
+		<div class="cart-container">
+			<ui:fragment rendered="false">
+				<div class="row no-product">
+					<h3 style="text-align: center;">Không có sản phẩm nào trong giỏ hàng</h3>
+					<h:outputLink value="#{request.contextPath}/web/index.xhtml" class="btn waves-effect waves-light" >Tiếp tục mua hàng</h:outputLink>
+				</div>
+			</ui:fragment>
+			<ui:fragment rendered="true">
+				<div class="row">
+					<div class="col s12">
+						<h:outputLink class="back-to-list" value="#">&lsaquo; Tiếp tục mua hàng</h:outputLink>
+					</div>
+				</div>
+				<hr />
+				<div class="cart-title">
+					<div class="row">
+						<div class="col s12">
+							<h3>Giỏ hàng của tôi</h3>
+						</div>
+					</div>
+				</div>
+				<div class="row my-cart">
+					<div class="col s8">
+						<table>
+							<thead>
+								<tr>
+									<td width="20%">1 SẢN PHẨM</td>
+									<td width="40%"></td>
+									<td width="20%">GIÁ</td>
+									<td width="15%">SỐ LƯỢNG</td>
+									<td width="5%"></td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr style="background: antiquewhite;">
+									<td style="padding: 20px;">
+										<h:graphicImage value="/resources/images/product/iphone-6s-32gb-1.png" width="80%"/>
+									</td>
+									<td>
+										<h4 class="product-title">Samsung Galaxy J1 2016 8GB</h4>
+										<p class="product-manufacturer">Samsung</p>
+										<p class="product-status">Còn hàng</p>
+									</td>
+									<td>
+										<h4 class="price">19.000.000 VNĐ</h4>
+										<p></p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col s4">
+						<div style="padding: 10px 0 10px 0">
+							<strong>Thông tin đơn hàng</strong>
+						</div>
+					</div>
+				</div>
+			</ui:fragment>
+		</div>
+	</ui:define>
+	<ui:define name="js">
+		<h:outputScript library="js" name="bootstrap.min.js" />
+	</ui:define>
+</ui:composition>

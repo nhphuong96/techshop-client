@@ -29,6 +29,10 @@
   /* text-align: left; */
 }
 
+#content .row:first-child {
+	margin-top: 10px;
+}
+
 #content .news-area .row {
 	margin: 0;
 }
@@ -55,6 +59,14 @@
 }
 
 .news-area .see-more {
+	background: white;
+	font-size: 12px;
+	text-align: center;
+	padding: 5px;
+	border-radius: 4px;
+}
+
+.news-area .see-more:hover {
 	background: white;
 	font-size: 12px;
 	text-align: center;

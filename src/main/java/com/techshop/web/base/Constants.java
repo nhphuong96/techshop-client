@@ -5,6 +5,7 @@ public class Constants {
 	public static final String CATEGORY = "/category";
 	public static final String MANUFACTURER = "/manufacturer";
 	public static final String PRODUCT = "/product";
+	public static final String SPECIFICATION_TYPE = "/specificationtype";
 	
 	/** API */
 	public static final String GET_ALL = "/getAll";

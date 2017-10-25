@@ -26,6 +26,10 @@ nav .nav-wrapper {
 	min-width: 1200px;
 }
 
+nav .nav-wrapper .row .col.s12 {
+	line-height: 40px;
+}
+
 nav .nav-wrapper ul {
 	height: 100%;
 }
@@ -39,16 +43,16 @@ nav .nav-wrapper ul li a {
 	font-size: 12px;
 }
 
-nav .nav-wrapper ul li a:hover {
+nav .nav-wrapper ul li a:hover, nav .nav-wrapper ul li a:active, nav .nav-wrapper ul li a:focus {
 	box-sizing: border-box;
 	height: 100%;
 	border-bottom: 5px solid orange;
 	background: #fff;
 	color: #000;
+	text-decoration: none;
 }
 
 .header {
-	margin-bottom: 10px;
 }
 
 .nav-wrapper .row {
@@ -102,6 +106,7 @@ nav .nav-wrapper ul li a:hover {
 
 .page-footer {
 	background-color: #fff;
+	border-top: 1px solid #c12d3b;
 }
 
 .page-footer .footer-copyright {
@@ -170,4 +175,18 @@ nav .nav-wrapper ul li a:hover {
 .fa-linkedin {
   background: #007bb5;
   color: white;
+}
+
+.cart {
+	padding: 5px 25px 5px 25px;
+	background: orange;
+	border-radius: 4px;
+	font-size: 12px;
+	border: 1px solid orange;
+}
+
+.cart:hover {
+	background: red;
+	color: white;
+	border: 1px solid white;
 }

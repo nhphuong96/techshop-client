@@ -48,13 +48,16 @@
 							<li><h:outputLink value="#">#{category.name}</h:outputLink></li>
 						</ui:repeat>
 					</ul>
+					<div class="right">
+						<h:outputLink class="cart" value="#{request.contextPath}/web/cart.xhtml">Giỏ hàng</h:outputLink>
+					</div>
 				</div>
 			</div>
 		</div>
 		</nav>
 	</div>
 	<div id="content">
-		<div style="width: 90%; margin: 0 auto; min-height: 525px;">
+		<div style="width: 90%; margin: 0 auto; min-height: 500px;">
 			<ui:insert name="content"></ui:insert>
 		</div>
 	</div>
