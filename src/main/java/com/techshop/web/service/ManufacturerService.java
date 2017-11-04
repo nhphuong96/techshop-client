@@ -7,4 +7,6 @@ import com.techshop.web.entity.Manufacturer;
 public interface ManufacturerService {
 
 	public List<Manufacturer> getAllManufacturer();
+	
+	public Manufacturer getManufacturerById(Long id);
 }

@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="../template/template.xhtml"
+	xmlns:p="http://primefaces.org/ui" xmlns:jsf="http://xmlns.jcp.org/jsf">
+	<ui:define name="title">Cập nhật thông tin giao hàng</ui:define>
+	<ui:define name="css">
+		<link
+			href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+			rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700"
+			rel="stylesheet" />
+		<h:outputStylesheet library="css" name="bootstrap.css" />
+		<h:outputStylesheet library="css" name="cart.css" />
+		<h:outputStylesheet library="css" name="checkout.css" />
+	</ui:define>
+	<ui:define name="content">
+		<div class="cart-container">
+			<div class="row">
+				<div class="col s8">
+					<div class="checkout-box-main">
+						<div class="checkout-box-heading">
+							<h5>Địa chỉ giao hàng của quý khách</h5>
+						</div>
+						<div class="checkout-box-body">
+							<h:form class="form-wrapper">
+								<div class="row">
+									<div class="col s8 row">
+										<div class="col s6">
+											<h:outputLabel value="Email" />
+										</div>
+										<div class="col s6">
+											<p:inputText class="input-field"
+												placeholder="Vui lòng nhập địa chỉ email" value=""></p:inputText>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col s8 row">
+										<div class="col s6">
+											<h:outputLabel value="Tên" />
+										</div>
+										<div class="col s6">
+											<p:inputText class="input-field" placeholder="Họ và tên"
+												value=""></p:inputText>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col s8 row">
+										<div class="col s6">
+											<h:outputLabel value="Công ty" />
+										</div>
+										<div class="col s6">
+											<p:inputText class="input-field" placeholder="Công ty"
+												value=""></p:inputText>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col s8 row">
+										<div class="col s6">
+											<h:outputLabel value="Số điện thoại" />
+										</div>
+										<div class="col s6">
+											<p:inputText class="input-field" placeholder="Số điện thoại"
+												value=""></p:inputText>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col s8 row">
+										<div class="col s6">
+											<h:outputLabel style="text-align: right;" value="Địa chỉ nhận hàng (số nhà, tầng, phòng...)" />
+										</div>
+										<div class="col s6">
+											<p:inputTextarea class="input-field" placeholder="Quý khách vui lòng ghi rõ thông tin chi tiết"
+												value=""></p:inputTextarea>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col s8 row">
+										<div class="col s6">
+											<h:outputLabel value="Thành phố" />
+										</div>
+										<div class="col s6">
+											<select class="browser-default">
+												<option value="1">Hà Nội</option>
+												<option value="2" selected="selected">TP. Hồ Chí Minh</option>
+												<option value="3">Đà Nẵng</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="row delivery-information">
+									<div class="row">
+										<h5>Thông tin giao hàng</h5>
+									</div>
+									<p style="margin-left: 30px;">
+								      <input class="with-gap" name="group1" type="radio" id="shipfree"  />
+								      <label style="padding: 0;padding-left: 40px; float: none;" for="shipfree">Giao hàng miễn phí (Giao hàng trong 3, 4 ngày)</label>
+								    </p>
+								    <p style="margin-left: 30px;">
+								      <input class="with-gap" name="group1" type="radio" id="shipfee"  />
+								      <label style="padding: 0;padding-left: 40px; float: none;" for="shipfee">Giao hàng nhanh (Giao hàng trong 24 giờ)</label>
+								    </p>
+								</div>
+							</h:form>
+						</div>
+					</div>
+				</div>
+				<div class="col s4">
+					<div class="checkout-box-main order-information">
+						<div class="checkout-box-heading">
+							<h5>Thông tin đơn hàng </h5>
+						</div>
+						<div class="checkout-box-body">
+							<table>
+								<thead>
+									<tr style="background: cornsilk">
+										<th style="width: 60%; padding-left: 10px">SẢN PHẨM</th>
+										<th style="width: 15%; text-align: center;">Số lượng</th>
+										<th style="width: 25%; text-align: center;">Giá</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr style="border-bottom: 1px solid #dde2e4;">
+										<td style="padding-left: 10px">Apple iPhone 7 Plus 32GB</td>
+										<td class="align-center">1</td>
+										<td class="align-center">16.450.000</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="row temporary-price">
+								<div class="col s7">Tạm tính</div>
+								<div class="col s5">16.450.000 VND</div>
+							</div>
+							<div class="row final-price">
+								<div class="col s7">Tổng tiền</div>
+								<div class="col s5">16.450.000 VND</div>
+							</div>
+							
+						</div>
+					</div>
+					<div class="row"
+							style="margin: 0; margin-top: 26px; text-align: center">
+							<h:outputLink value="#{request.contextPath}/thanh-toan/phuong-thuc-thanh-toan" styleClass="purchase">tiếp tục</h:outputLink>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+	<ui:define name="js">
+		<h:outputScript library="js" name="bootstrap.min.js" />
+	</ui:define>
+</ui:composition>

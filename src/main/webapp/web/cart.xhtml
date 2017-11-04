@@ -4,7 +4,9 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	template="../template/template.xhtml">
+	template="../template/template.xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:jsf="http://xmlns.jcp.org/jsf">
 	<ui:define name="title">Giỏ hàng</ui:define>
 	<ui:define name="css">
 		<link
@@ -17,17 +19,20 @@
 		<h:outputStylesheet library="css" name="cart.css" />
 	</ui:define>
 	<ui:define name="content">
-		<div class="cart-container">
-			<ui:fragment rendered="false">
+		<div class="cart-container" jsf:id="products">
+			<ui:fragment rendered="#{cartController.cartSize() == 0}">
 				<div class="row no-product">
-					<h3 style="text-align: center;">Không có sản phẩm nào trong giỏ hàng</h3>
-					<h:outputLink value="#{request.contextPath}/web/index.xhtml" class="btn waves-effect waves-light" >Tiếp tục mua hàng</h:outputLink>
+					<h3 style="text-align: center;">Không có sản phẩm nào trong
+						giỏ hàng</h3>
+					<h:outputLink value="#{request.contextPath}/web/index.xhtml"
+						class="btn waves-effect waves-light">Tiếp tục mua hàng</h:outputLink>
 				</div>
 			</ui:fragment>
-			<ui:fragment rendered="true">
+			<ui:fragment rendered="#{cartController.cartSize() != 0}">
 				<div class="row">
 					<div class="col s12">
-						<h:outputLink class="back-to-list" value="#">&lsaquo; Tiếp tục mua hàng</h:outputLink>
+						<h:outputLink class="back-to-list"
+							value="#{request.contextPath}/web/index.xhtml">&lsaquo; Tiếp tục mua hàng</h:outputLink>
 					</div>
 				</div>
 				<hr />
@@ -43,7 +48,7 @@
 						<table>
 							<thead>
 								<tr>
-									<td width="20%">1 SẢN PHẨM</td>
+									<td width="20%">#{cartController.cartSize()} SẢN PHẨM</td>
 									<td width="40%"></td>
 									<td width="20%">GIÁ</td>
 									<td width="15%">SỐ LƯỢNG</td>
@@ -51,26 +56,80 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr style="background: antiquewhite;">
-									<td style="padding: 20px;">
-										<h:graphicImage value="/resources/images/product/iphone-6s-32gb-1.png" width="80%"/>
-									</td>
-									<td>
-										<h4 class="product-title">Samsung Galaxy J1 2016 8GB</h4>
-										<p class="product-manufacturer">Samsung</p>
-										<p class="product-status">Còn hàng</p>
-									</td>
-									<td>
-										<h4 class="price">19.000.000 VNĐ</h4>
-										<p></p>
-									</td>
-								</tr>
+								<ui:repeat value="#{cartController.cart}" var="item">
+									<tr
+										style="background: floralwhite; border: 1px solid rgba(4, 3, 3, 0.21)">
+										<td style="padding: 20px;">
+											<h:outputLink value="">	
+											<h:graphicImage
+												value="/resources/images/product/#{item.productInCart.image1}"
+												width="80%" />
+											</h:outputLink>
+										</td>
+										<td>
+											<h4 class="product-title">#{item.productInCart.productName}</h4>
+											<p class="product-manufacturer">#{item.productInCart.manufacturerId.name}</p>
+											<p class="product-status">Còn hàng</p>
+										</td>
+										<td>
+											<h4 class="price">
+												<h:outputText value="#{item.productInCart.price}">
+													<f:convertNumber type="currency" locale="es_PY"
+														currencySymbol="" />
+												</h:outputText>
+												VND
+											</h4>
+											<p></p>
+										</td>
+										<td style="padding-top: 5px;">
+											<div class="quantity">
+												<p:commandLink update="temporary-total actual-total product-quantity" actionListener="#{cartController.descreaseProductQuantity(item)}">
+													<i class="fa fa-minus" aria-hidden="true"></i>
+													<p:ajax />
+												</p:commandLink>
+												<span>
+												<h:inputText id="product-quantity" styleClass="input-text" value="#{item.quantity}" disabled="#{not(empty item.quantity)}"></h:inputText>
+												</span>
+												<p:commandLink update="temporary-total actual-total product-quantity" actionListener="#{cartController.increaseProductQuantity(item)}">
+													<i class="fa fa-plus" aria-hidden="true"></i>
+												</p:commandLink>
+											</div>
+										</td>
+										<td style="padding-top: 5px;">
+											<p:commandLink class="cross" update="products" actionListener="#{cartController.removeProductFromCart(item)}">
+													<span><i class="fa fa-times" aria-hidden="true"></i></span>
+											</p:commandLink>
+										</td>
+									</tr>
+								</ui:repeat>
 							</tbody>
 						</table>
 					</div>
 					<div class="col s4">
 						<div style="padding: 10px 0 10px 0">
 							<strong>Thông tin đơn hàng</strong>
+						</div>
+						<hr style="margin-top: 0" />
+						<div class="row" style="margin: 0">
+							<span class="col s6" style="padding: 0">Tạm tính: </span> 
+							<span class="col s6 order-info-temporary-price"> 
+							<h:outputText id="temporary-total" value="#{cartController.actualTotalPrice}">
+									<f:convertNumber type="currency" locale="es_PY" currencySymbol="" />
+							</h:outputText> VND
+							</span>
+						</div>
+						<hr />
+						<div class="row" style="margin: 0; margin-top: 40px;">
+							<span class="col s6" style="padding: 0"><strong>Tổng tiền</strong> (Đã bao gồm VAT)</span> 
+							<span class="col s6 order-info-actual-price">
+								<h:outputText id="actual-total" value="#{cartController.actualTotalPrice}">
+									<f:convertNumber type="currency" locale="es_PY" currencySymbol="" />
+								</h:outputText> VND
+							</span>
+						</div>
+						<div class="row"
+							style="margin: 0; margin-top: 26px; text-align: center">
+							<h:outputLink value="#{request.contextPath}/thanh-toan/thong-tin-giao-hang" styleClass="purchase">tiến hành thanh toán</h:outputLink>
 						</div>
 					</div>
 				</div>

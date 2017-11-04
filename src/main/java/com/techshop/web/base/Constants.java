@@ -1,6 +1,10 @@
 package com.techshop.web.base;
 
+import javax.faces.context.FacesContext;
+
 public class Constants {
+	
+	public static final String CONTEXT_PATH = FacesContext.getCurrentInstance().getExternalContext().getApplicationContextPath();
 	public static final String PATH = "http://localhost:8080/techshop-data/api";
 	public static final String CATEGORY = "/category";
 	public static final String MANUFACTURER = "/manufacturer";

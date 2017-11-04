@@ -27,7 +27,9 @@
 			<div class="container-fliud">
 				<div class="row">
 					<h3 class="product-title col s10">#{product.selectedProduct.productName}</h3>
-					<div class="fb-like col s2" style="text-align: right;" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+					<div class="fb-like col s2" style="text-align: right;"
+						data-layout="button_count" data-action="like" data-size="small"
+						data-show-faces="true" data-share="true"></div>
 				</div>
 				<div class="wrapper row">
 
@@ -50,7 +52,11 @@
 							</p>
 						</div>
 						<h4 class="price">
-							Giá hiện tại: <span>#{product.selectedProduct.price} VNĐ</span>
+							Giá hiện tại: <span><h:outputText
+												value="#{product.selectedProduct.price}">
+												<f:convertNumber type="currency" locale="es_PY"
+													currencySymbol="" />
+											</h:outputText> VND</span>
 						</h4>
 						<p class="vote">
 							<strong>91%</strong> người mua thích sản phẩm này! <strong>(87
@@ -62,10 +68,14 @@
 								class="color green"></span> <span class="color blue"></span>
 						</h5>
 						<div class="action">
-							<button class="add-to-cart btn btn-danger" type="button">Thêm
-								vào giỏ</button>
-							<button class="like btn btn-primary" type="button">yêu
-								thích</button>
+							<h:form>
+								<h:commandLink styleClass="add-to-cart btn btn-danger"
+									value="Thêm
+								vào giỏ"
+									action="#{cartController.addProductToCart(product.selectedProduct)}" />
+								<button class="like btn btn-primary" type="button">yêu
+									thích</button>
+							</h:form>
 						</div>
 					</div>
 				</div>
@@ -89,7 +99,7 @@
 						</div>
 						<br />
 						<div class="fb-comments" data-width="100%" data-numposts="5"></div>
-				
+
 					</div>
 					<div class="col s7">
 						<h3>Đặc điểm nổi bật của

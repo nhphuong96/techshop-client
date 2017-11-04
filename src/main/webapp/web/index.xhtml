@@ -106,21 +106,30 @@
 					<h:outputLink styleClass="see-more" value="#">Xem thêm</h:outputLink>
 				</div>
 				<div class="row product-grid">
-					<ui:repeat value="#{homeController.mobileList.products}" var="mobile">
+					<ui:repeat value="#{homeController.mobileList.products}"
+						var="mobile">
 						<div class="col s3 text-center col-sm-6 col-xs-6">
 							<div class="thumbnail product-box">
-								<h:graphicImage value="/resources/images/product/#{mobile.image1}"
-									alt="" style="width: 200px; min-height: 230px;"/>
+								<h:graphicImage
+									value="/resources/images/product/#{mobile.image1}" alt=""
+									style="width: 200px; min-height: 230px;" />
 								<div class="caption">
 									<h4>
 										<a href="#">#{mobile.productName}</a>
 									</h4>
 									<p>
-										<span class="price">Giá</span><strong>#{mobile.price}</strong> VNĐ
+										<span class="price">Giá</span><strong> <h:outputText
+												value="#{mobile.price}">
+												<f:convertNumber type="currency" locale="es_PY"
+													currencySymbol="" />
+											</h:outputText> VND
+										</strong>
 									</p>
 									<p>
-										<a href="#" class="btn btn-danger" type="button">Thêm vào giỏ</a>
-										 <a href="#{request.contextPath}/dien-thoai/#{mobile.alias}" class="btn btn-primary" type="button">Chi tiết</a>
+										<a href="#" class="btn btn-danger" type="button">Thêm vào
+											giỏ</a> <a
+											href="#{request.contextPath}/dien-thoai/#{mobile.alias}"
+											class="btn btn-primary" type="button">Chi tiết</a>
 									</p>
 								</div>
 							</div>
@@ -134,21 +143,30 @@
 					<h:outputLink styleClass="see-more" value="#">Xem thêm</h:outputLink>
 				</div>
 				<div class="row product-grid">
-					<ui:repeat value="#{homeController.tabletList.products}" var="tablet">
+					<ui:repeat value="#{homeController.tabletList.products}"
+						var="tablet">
 						<div class="col s3 text-center col-sm-6 col-xs-6">
 							<div class="thumbnail product-box">
-								<h:graphicImage value="/resources/images/product/#{tablet.image1}"
-										alt="" style="width: 200px; min-height: 230px;"/>
+								<h:graphicImage
+									value="/resources/images/product/#{tablet.image1}" alt=""
+									style="width: 200px; min-height: 230px;" />
 								<div class="caption">
 									<h4>
 										<a href="#">#{tablet.productName}</a>
 									</h4>
 									<p>
-										<span class="price">Giá</span><strong>#{tablet.price}</strong> VNĐ
+										<span class="price">Giá</span><strong> <h:outputText
+												value="#{tablet.price}">
+												<f:convertNumber type="currency" locale="es_PY"
+													currencySymbol="" />
+											</h:outputText> VND
+										</strong>
 									</p>
 									<p>
-										<a href="#" class="btn btn-danger" type="button">Thêm vào giỏ</a>
-										 <a href="#{request.contextPath}/dien-thoai/#{tablet.alias}" class="btn btn-primary" type="button">Chi tiết</a>
+										<a href="#" class="btn btn-danger" type="button">Thêm vào
+											giỏ</a> <a
+											href="#{request.contextPath}/dien-thoai/#{tablet.alias}"
+											class="btn btn-primary" type="button">Chi tiết</a>
 									</p>
 								</div>
 							</div>
@@ -162,21 +180,30 @@
 					<h:outputLink styleClass="see-more" value="#">Xem thêm</h:outputLink>
 				</div>
 				<div class="row product-grid">
-					<ui:repeat value="#{homeController.laptopList.products}" var="laptop">
+					<ui:repeat value="#{homeController.laptopList.products}"
+						var="laptop">
 						<div class="col s3 text-center col-sm-6 col-xs-6">
 							<div class="thumbnail product-box">
-								<h:graphicImage value="/resources/images/product/#{laptop.image1}"
-										alt="" style="width: 200px; min-height: 230px;"/>
+								<h:graphicImage
+									value="/resources/images/product/#{laptop.image1}" alt=""
+									style="width: 200px; min-height: 230px;" />
 								<div class="caption">
 									<h4>
 										<a href="#">#{laptop.productName}</a>
 									</h4>
 									<p>
-										<span class="price">Giá</span><strong>#{laptop.price}</strong> VNĐ
+										<span class="price">Giá</span><strong> <h:outputText
+												value="#{laptop.price}">
+												<f:convertNumber type="currency" locale="es_PY"
+													currencySymbol="" />
+											</h:outputText> VND
+										</strong>
 									</p>
 									<p>
-										<a href="#" class="btn btn-danger" type="button">Thêm vào giỏ</a>
-										 <a href="#{request.contextPath}/dien-thoai/#{laptop.alias}" class="btn btn-primary" type="button">Chi tiết</a>
+										<a href="#" class="btn btn-danger" type="button">Thêm vào
+											giỏ</a> <a
+											href="#{request.contextPath}/dien-thoai/#{laptop.alias}"
+											class="btn btn-primary" type="button">Chi tiết</a>
 									</p>
 								</div>
 							</div>
@@ -193,18 +220,26 @@
 					<ui:repeat value="#{homeController.equipList.products}" var="equip">
 						<div class="col s3 text-center col-sm-6 col-xs-6">
 							<div class="thumbnail product-box">
-								<h:graphicImage value="/resources/images/product/#{equip.image1}"
-										alt="" style="width: 200px; min-height: 230px;"/>
+								<h:graphicImage
+									value="/resources/images/product/#{equip.image1}" alt=""
+									style="width: 200px; min-height: 230px;" />
 								<div class="caption">
 									<h4>
 										<a href="#">#{equip.productName}</a>
 									</h4>
 									<p>
-										<span class="price">Giá</span><strong>#{equip.price}</strong> VNĐ
+										<span class="price">Giá</span><strong><h:outputText
+												value="#{equip.price}">
+												<f:convertNumber type="currency" locale="es_PY"
+													currencySymbol="" />
+											</h:outputText> VND
+										</strong>
 									</p>
 									<p>
-										<a href="#" class="btn btn-danger" type="button">Thêm vào giỏ</a>
-										 <a href="#{request.contextPath}/dien-thoai/#{equip.alias}" class="btn btn-primary" type="button">Chi tiết</a>
+										<a href="#" class="btn btn-danger" type="button">Thêm vào
+											giỏ</a> <a
+											href="#{request.contextPath}/dien-thoai/#{equip.alias}"
+											class="btn btn-primary" type="button">Chi tiết</a>
 									</p>
 								</div>
 							</div>
