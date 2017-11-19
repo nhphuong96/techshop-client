@@ -116,10 +116,17 @@ tbody td {
 	transition: background .3s
 }
 
-.purchase:hover, .purchase:active, .purchase:focus {
+.purchase:hover  {
 	color: #f37021;
 	text-decoration: none;
 	background: antiquewhite;
+}
+
+.purchase:active, .purchase:focus {
+	background: #f37021;
+	outline: none;
+	text-decoration: none;
+	color: white;
 }
 
 .quantity input[type=text]:not(.browser-default).input-text {

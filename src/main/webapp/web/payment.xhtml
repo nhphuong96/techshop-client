@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="../template/template.xhtml"
+	xmlns:p="http://primefaces.org/ui" xmlns:jsf="http://xmlns.jcp.org/jsf">
+	<ui:define name="title">Cập nhật thông tin giao hàng</ui:define>
+	<ui:define name="css">
+		<link
+			href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+			rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700"
+			rel="stylesheet" />
+		<h:outputStylesheet library="css" name="bootstrap.css" />
+		<h:outputStylesheet library="css" name="cart.css" />
+		<h:outputStylesheet library="css" name="checkout.css" />
+		<h:outputStylesheet library="css" name="payment.css" />
+	</ui:define>
+	<ui:define name="content">
+		<div class="cart-container">
+			<div class="row">
+				<div class="col s8">
+					<div class="checkout-box-main">
+						<div class="checkout-box-heading">
+							<h5>Chọn phương thức thanh toán</h5>
+						</div>
+						<div class="checkout-box-body">
+							<ul class="nav nav-tabs">
+								<li class="tab-width active"><a data-toggle="tab"
+									href="#home"><i class="fa fa-money" aria-hidden="true"></i><br />Thanh
+										toán khi nhận hàng</a></li>
+								<li class="tab-width"><a data-toggle="tab" href="#menu1"><i
+										class="fa fa-credit-card" aria-hidden="true"></i><br />Thẻ
+										tín dụng/ghi nợ</a></li>
+							</ul>
+
+							<div class="tab-content">
+								<div id="home" class="tab-pane fade in active pay-at-home">
+									<p>
+										<b>Quý khách sẽ thanh toán bằng tiền mặt khi nhận hàng tại
+											nhà</b>
+									</p>
+									<p>
+										<b>Lưu ý: </b>
+									</p>
+									<p>- Bạn nhớ kiểm tra kỹ thông tin của đơn hàng bên phải vì
+										thông tin này sẽ không thể thay đổi sau khi đơn hàng được xác
+										nhận thành công.</p>
+									<p>- TechShop.vn sẽ không gửi tin nhắn xác nhận đơn hàng
+										nên bạn vui lòng xem lại thông tin trong xác nhận đơn hàng
+										được gửi qua email.</p>
+									<p>- Nhằm đảm bảo quyền lợi mua sắm cho các khách hàng cá
+										nhân, TechShop sẽ giới hạn số lượng sản phẩm trong mỗi đơn
+										hàng và chúng tôi xin phép từ chối đơn hàng có dấu hiệu mua đi
+										bán lại.</p>
+									<p>- Hiện tại TechShop chưa thể hỗ trợ giao hàng lên lầu /
+										tầng đối với các địa chỉ thuộc chung cư hoặc tòa nhà cao tầng.</p>
+									<p class="credit-description">Trong mọi trường hợp, trừ khi
+										có yêu cầu khác đi, Quý Khách hàng sẽ nhận được hoá đơn theo
+										thông tin cá nhân đã đăng ký khi mua hàng tại TechShop. Để
+										chuyển đổi từ hóa đơn cho cá nhân sang hóa đơn cho doanh
+										nghiệp, Quý Khách hàng vui lòng liên hệ TechShop trong vòng 7
+										ngày kể từ ngày đặt hàng. Sau thời gian trên, TechShop có toàn
+										quyền từ chối hỗ trợ chuyển đổi.</p>
+									<div class="row" style="margin-bottom: 0;">
+										<div class="col-md-5"
+											style="margin: 0; margin-top: 26px; text-align: center">
+											<p:commandLink update="payment-credit" styleClass="purchase"
+												actionListener="#{checkout.submitInformation()}"
+												validateClient="true">
+												<i
+													style="padding: 0; margin: 0; width: 25px; text-align: left;"
+													class="fa fa-lock" aria-hidden="true"></i>
+												<h:outputText value="ĐẶT HÀNG"></h:outputText>
+											</p:commandLink>
+										</div>
+									</div>
+								</div>
+								<div id="menu1" class="tab-pane fade">
+									<div class="row" style="margin-bottom: 0;">
+										<div class="col-md-12">
+											<h:form id="payment-credit" class="payment-credit">
+												<div class="row">
+													<div class="col-md-6">
+														<h:outputLabel value="Số thẻ *" />
+														<p:inputText id="card-number" class="input-field" value=""
+															required="true" requiredMessage="This field is required"
+															placeholder="Số thẻ" />
+														<h:message class="error-message" for="card-number" />
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-6">
+														<h:outputLabel value="Tên in trên thẻ *" />
+														<p:inputText id="name-on-card" class="input-field"
+															value="" required="true"
+															requiredMessage="This field is required"
+															placeholder="Tên đầy đủ" />
+														<h:message for="name-on-card" class="error-message" />
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-3">
+														<h:outputLabel value="Ngày hết hạn *" />
+														<p:inputMask id="deadline" mask="99/9999"
+															class="input-field" value="" required="true"
+															requiredMessage="This field is required"
+															placeholder="mm/yyyy" />
+														<h:message for="deadline" class="error-message" />
+													</div>
+													<div class="col-md-3">
+														<h:outputLabel value="CCV/CVV *" />
+														<p:inputText id="ccv" class="input-field" value=""
+															placeholder="CCV/CVV" required="true"
+															requiredMessage="This field is required" />
+														<h:message for="ccv" class="error-message" />
+													</div>
+												</div>
+												<hr />
+												<p class="credit-description">Trong mọi trường hợp, trừ
+													khi có yêu cầu khác đi, Quý Khách hàng sẽ nhận được hoá đơn
+													theo thông tin cá nhân đã đăng ký khi mua hàng tại
+													TechShop. Để chuyển đổi từ hóa đơn cho cá nhân sang hóa đơn
+													cho doanh nghiệp, Quý Khách hàng vui lòng liên hệ TechShop
+													trong vòng 7 ngày kể từ ngày đặt hàng. Sau thời gian trên,
+													TechShop có toàn quyền từ chối hỗ trợ chuyển đổi.</p>
+												<div class="row" style="margin-bottom: 0;">
+													<div class="col-md-5"
+														style="margin: 0; margin-top: 26px; text-align: center">
+														<p:commandLink update="payment-credit"
+															styleClass="purchase"
+															actionListener="#{checkout.submitInformation()}"
+															validateClient="true">
+															<i
+																style="padding: 0; margin: 0; width: 25px; text-align: left;"
+																class="fa fa-lock" aria-hidden="true"></i>
+															<h:outputText value="ĐẶT HÀNG"></h:outputText>
+														</p:commandLink>
+													</div>
+												</div>
+											</h:form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col s4">
+					<div class="checkout-box-main">
+						<div class="checkout-box-heading">
+							<h5>
+								Địa chỉ giao hàng/Thanh toán |
+								<h:outputLink style="overflow: hidden; font-size: 12px;"
+									value="#{request.contextPath}/thanh-toan/thong-tin-giao-hang">Chỉnh sửa</h:outputLink>
+							</h5>
+						</div>
+						<div class="checkout-box-body">
+							<div style="padding: 10px;">
+								<p style="font-size: 12px;">
+									<strong>#{checkout.model.name}</strong>
+								</p>
+								<p style="font-size: 12px;">#{checkout.model.address}</p>
+								<p style="font-size: 12px;">#{checkout.model.city}</p>
+								<p style="font-size: 12px;">Điện thoại di động: #{checkout.model.phone}</p>
+							</div>
+						</div>
+					</div>
+					<br />
+					<div class="checkout-box-main order-information">
+						<div class="checkout-box-heading">
+							<h5>Thông tin đơn hàng</h5>
+						</div>
+						<div class="checkout-box-body">
+							<table>
+								<thead>
+									<tr style="background: cornsilk">
+										<th style="width: 60%; padding-left: 10px">SẢN PHẨM</th>
+										<th style="width: 15%; text-align: center;">Số lượng</th>
+										<th style="width: 25%; text-align: center;">Giá</th>
+									</tr>
+								</thead>
+								<tbody>
+									<ui:repeat value="#{cartController.cart}" var="item">
+										<tr style="border-bottom: 1px solid #dde2e4;">
+											<td style="padding-left: 10px">#{item.productInCart.productName}</td>
+											<td class="align-center">#{item.quantity}</td>
+											<td class="align-center">
+												<span><h:outputText
+												value="#{item.productInCart.price}">
+												<f:convertNumber type="currency" locale="es_PY"
+													currencySymbol="" />
+											</h:outputText></span>
+											</td>
+										</tr>
+									</ui:repeat>
+								</tbody>
+							</table>
+							<div class="row temporary-price">
+								<div class="col s7">Tạm tính</div>
+								<div class="col s5">
+									<span><h:outputText
+												value="#{cartController.actualTotalPrice != null ? cartController.actualTotalPrice : 0 }">
+												<f:convertNumber type="currency" locale="es_PY"
+													currencySymbol="" />
+											</h:outputText> VND</span>
+								</div>
+							</div>
+							<div jsf:id="delivery-fee" class="row temporary-price">
+								<div class="col s7" style="color: mediumblue">
+									Phí vận chuyển
+								</div>
+								<div class="col s5">
+								<ui:fragment rendered="#{cartController.actualTotalPrice lt 10000000}">
+									<span><h:outputText
+												value="#{checkout.deliveryFee eq null ? 0 : checkout.deliveryFee}">
+												<f:convertNumber type="currency" locale="es_PY"
+													currencySymbol="" />
+											</h:outputText> VND</span>
+											</ui:fragment>
+											
+											<ui:fragment rendered="#{cartController.actualTotalPrice gt 10000000}">
+									<span><h:outputText
+												value="0">
+												<f:convertNumber type="currency" locale="es_PY"
+													currencySymbol="" />
+											</h:outputText> VND</span>
+											</ui:fragment>
+								</div>
+							</div>
+							<div class="row final-price">
+								<div class="col s7">Tổng tiền</div>
+								<div class="col s5">
+									<span><h:outputText
+												value="#{cartController.actualTotalPrice != null ? cartController.actualTotalPrice +  checkout.deliveryFee : 0 }">
+												<f:convertNumber type="currency" locale="es_PY"
+													currencySymbol="" />
+											</h:outputText> VND</span>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<h:form>
+			<p:remoteCommand name="submitCart" action="#{checkout.updateProducts(cartController.cart)}" />
+		</h:form>
+		<script>
+		$( document ).ready(function() {
+		   submitCart();
+		});
+		</script>
+	</ui:define>
+	<ui:define name="js">
+		<h:outputScript library="js" name="bootstrap.min.js" />
+	</ui:define>
+</ui:composition>

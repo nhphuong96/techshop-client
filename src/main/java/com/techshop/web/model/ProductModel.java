@@ -6,6 +6,7 @@ import com.techshop.web.entity.Category;
 import com.techshop.web.entity.Manufacturer;
 
 public class ProductModel {
+	private Long id;
 	private String productName;
 	private String alias;
 	private String descriptionHTML;
@@ -16,6 +17,13 @@ public class ProductModel {
 	private List<SpecificationModel> specificationInfos;
 	private Manufacturer manufacturerId;
 	private Category categoryId;
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getProductName() {
 		return productName;
 	}

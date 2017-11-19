@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="../template/template.xhtml"
+	xmlns:p="http://primefaces.org/ui" xmlns:jsf="http://xmlns.jcp.org/jsf">
+	<ui:define name="title">Cập nhật thông tin giao hàng</ui:define>
+	<ui:define name="css">
+		<link
+			href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+			rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700"
+			rel="stylesheet" />
+		<h:outputStylesheet library="css" name="bootstrap.css" />
+		<h:outputStylesheet library="css" name="cart.css" />
+		<h:outputStylesheet library="css" name="success.css" />
+	</ui:define>
+	<ui:define name="content">
+		<div class="cart-container">
+			<div class="row">
+				<div class="col-md-12" style="text-align: center; margin-top: 30px;">
+					<h:graphicImage value="/resources/images/fail.png" width="60px"/>
+					<p class="success">Đặt hàng thất bại</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12" style="text-align: center;">
+					<p class="description">Đã có lỗi xảy ra. Xin quý khách thử lại</p>
+					<p class="description"><strong>Xin cám ơn quý khách</strong></p>
+				</div>
+			</div>
+			<div class="row no-product">
+				<div class="col-md-12" style="margin: 0; margin-top: 26px; text-align: center">
+					<h:outputLink value="#{request.contextPath}/web/index.xhtml"
+						class="btn waves-effect waves-light">Quay lại mua hàng</h:outputLink>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+	<ui:define name="js">
+		<h:outputScript library="js" name="bootstrap.min.js" />
+	</ui:define>
+</ui:composition>

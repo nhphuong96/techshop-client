@@ -35,6 +35,7 @@ public class ProductConverterImpl implements ProductConverter {
 			return new ProductModel();
 		}
 		ProductModel pm = new ProductModel();
+		pm.setId(pi.getId());
 		pm.setProductName(pi.getProductName());
 		pm.setAlias(pi.getAlias());
 		Category category = categoryService.getById(pi.getCategoryId());

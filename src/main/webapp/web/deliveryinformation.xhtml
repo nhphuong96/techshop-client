@@ -26,73 +26,86 @@
 							<h5>Địa chỉ giao hàng của quý khách</h5>
 						</div>
 						<div class="checkout-box-body">
-							<h:form class="form-wrapper">
+							<h:form id="form-wrapper" class="form-wrapper">
 								<div class="row">
 									<div class="col s8 row">
 										<div class="col s6">
-											<h:outputLabel value="Email" />
+											<h:outputLabel value="Email *" />
 										</div>
 										<div class="col s6">
-											<p:inputText class="input-field"
-												placeholder="Vui lòng nhập địa chỉ email" value=""></p:inputText>
+											<p:inputText id="email" class="input-field" placeholder="Vui lòng nhập địa chỉ email" 
+																						value="#{checkout.model.email}" required="true" 
+																						requiredMessage="Vui lòng điền thông tin"
+																						validatorMessage="Email sai định dạng">
+												<f:validateRegex for="email" pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$"/>											
+											</p:inputText>
+											<h:message for="email" styleClass="error-message"/>
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col s8 row">
 										<div class="col s6">
-											<h:outputLabel value="Tên" />
+											<h:outputLabel value="Tên *" />
 										</div>
 										<div class="col s6">
-											<p:inputText class="input-field" placeholder="Họ và tên"
-												value=""></p:inputText>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col s8 row">
-										<div class="col s6">
-											<h:outputLabel value="Công ty" />
-										</div>
-										<div class="col s6">
-											<p:inputText class="input-field" placeholder="Công ty"
-												value=""></p:inputText>
+											<p:inputText id="name" class="input-field" placeholder="Họ và tên"
+												value="#{checkout.model.name}" required="true" requiredMessage="Vui lòng điền thông tin">
+											
+											</p:inputText>
+											<h:message for="name" styleClass="error-message"/>
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col s8 row">
 										<div class="col s6">
-											<h:outputLabel value="Số điện thoại" />
+											<h:outputLabel value="Công ty *" />
 										</div>
 										<div class="col s6">
-											<p:inputText class="input-field" placeholder="Số điện thoại"
-												value=""></p:inputText>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col s8 row">
-										<div class="col s6">
-											<h:outputLabel style="text-align: right;" value="Địa chỉ nhận hàng (số nhà, tầng, phòng...)" />
-										</div>
-										<div class="col s6">
-											<p:inputTextarea class="input-field" placeholder="Quý khách vui lòng ghi rõ thông tin chi tiết"
-												value=""></p:inputTextarea>
+											<p:inputText id="company" class="input-field" placeholder="Công ty"
+												value="#{checkout.model.company}" required="true" requiredMessage="Vui lòng điền thông tin"></p:inputText>
+												<h:message for="company" styleClass="error-message"/>
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col s8 row">
 										<div class="col s6">
-											<h:outputLabel value="Thành phố" />
+											<h:outputLabel value="Số điện thoại *" />
 										</div>
 										<div class="col s6">
-											<select class="browser-default">
-												<option value="1">Hà Nội</option>
-												<option value="2" selected="selected">TP. Hồ Chí Minh</option>
-												<option value="3">Đà Nẵng</option>
-											</select>
+											<p:inputText id="phone" class="input-field" placeholder="Số điện thoại"
+												value="#{checkout.model.phone}" required="true" requiredMessage="Vui lòng điền thông tin"></p:inputText>
+												<h:message for="phone" styleClass="error-message"/>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col s8 row">
+										<div class="col s6">
+											<h:outputLabel style="text-align: right;" value="Địa chỉ nhận hàng (số nhà, tầng, phòng...) *" />
+										</div>
+										<div class="col s6">
+											<p:inputTextarea id="address" class="input-field" placeholder="Quý khách vui lòng ghi rõ thông tin chi tiết"
+												value="#{checkout.model.address}" required="true" requiredMessage="Vui lòng điền thông tin"></p:inputTextarea>
+												<h:message for="address" styleClass="error-message"/>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col s8 row">
+										<div class="col s6">
+											<h:outputLabel value="Thành phố *" />
+										</div>
+										<div class="col s6">
+											<h:selectOneMenu id="city" value="#{checkout.model.city}" class="browser-default" required="true" requiredMessage="Vui lòng chọn thành phố">
+												<f:selectItem itemValue="#{null}" noSelectionOption="true" itemLabel="Chọn thành phố"/>
+												<f:selectItem itemValue="Hà Nội" itemLabel="Hà Nội"/>
+												<f:selectItem itemValue="Đà Nẵng" itemLabel="Đà Nẵng"/>
+												<f:selectItem itemValue="TP. Hồ Chí Minh" itemLabel="TP. Hồ Chí Minh"/>
+											</h:selectOneMenu>
+											<h:message class="error-message" for="city"/>
 										</div>
 									</div>
 								</div>
@@ -100,14 +113,20 @@
 									<div class="row">
 										<h5>Thông tin giao hàng</h5>
 									</div>
-									<p style="margin-left: 30px;">
-								      <input class="with-gap" name="group1" type="radio" id="shipfree"  />
-								      <label style="padding: 0;padding-left: 40px; float: none;" for="shipfree">Giao hàng miễn phí (Giao hàng trong 3, 4 ngày)</label>
-								    </p>
-								    <p style="margin-left: 30px;">
-								      <input class="with-gap" name="group1" type="radio" id="shipfee"  />
-								      <label style="padding: 0;padding-left: 40px; float: none;" for="shipfee">Giao hàng nhanh (Giao hàng trong 24 giờ)</label>
-								    </p>
+									<h:selectOneRadio id="delivery" class="delivery-item" value="#{checkout.model.deliveryType}" required="true" requiredMessage="Vui lòng chọn kiểu giao hàng">
+										<p:ajax process="@this" listener="#{checkout.updateDeliveryFee()}" update="final-price delivery-fee"/>
+										<f:selectItem itemValue="free" itemLabel="Giao hàng miễn phí (Giao hàng trong 3, 4 ngày)" />
+										<f:selectItem itemValue="fee" itemLabel="Giao hàng nhanh (Giao hàng trong 24 giờ)" />
+									</h:selectOneRadio>
+									<h:message class="error-message" style="margin-left: 15px;" for="delivery"/>
+								</div>
+								<div class="row">
+									<div class="col-md-6"
+										style="margin: 0; margin-top: 26px; text-align: center">
+										<p:commandLink update="form-wrapper" styleClass="purchase" actionListener="#{checkout.redirectToPaymentInformation()}" validateClient="true">
+											<h:outputText value="tiếp tục"></h:outputText>
+										</p:commandLink>
+									</div>
 								</div>
 							</h:form>
 						</div>
@@ -128,27 +147,63 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr style="border-bottom: 1px solid #dde2e4;">
-										<td style="padding-left: 10px">Apple iPhone 7 Plus 32GB</td>
-										<td class="align-center">1</td>
-										<td class="align-center">16.450.000</td>
-									</tr>
+									<ui:repeat value="#{cartController.cart}" var="item">
+										<tr style="border-bottom: 1px solid #dde2e4;">
+											<td style="padding-left: 10px">#{item.productInCart.productName}</td>
+											<td class="align-center">#{item.quantity}</td>
+											<td class="align-center">
+												<span><h:outputText
+												value="#{item.productInCart.price}">
+												<f:convertNumber type="currency" locale="es_PY"
+													currencySymbol="" />
+											</h:outputText></span>
+											</td>
+										</tr>
+									</ui:repeat>
 								</tbody>
 							</table>
-							<div class="row temporary-price">
+							<div id="temporary-price" class="row temporary-price">
 								<div class="col s7">Tạm tính</div>
-								<div class="col s5">16.450.000 VND</div>
+								<div class="col s5"><span><h:outputText
+												value="#{cartController.actualTotalPrice != null ? cartController.actualTotalPrice : 0 }">
+												<f:convertNumber type="currency" locale="es_PY"
+													currencySymbol="" />
+											</h:outputText> VND</span></div>
 							</div>
-							<div class="row final-price">
+							<div jsf:id="delivery-fee" class="row temporary-price">
+								<div class="col s7" style="color: mediumblue">
+									Phí vận chuyển
+								</div>
+								<div class="col s5">
+								<ui:fragment rendered="#{cartController.actualTotalPrice lt 10000000}">
+									<span><h:outputText
+												value="#{checkout.deliveryFee eq null ? 0 : checkout.deliveryFee}">
+												<f:convertNumber type="currency" locale="es_PY"
+													currencySymbol="" />
+											</h:outputText> VND</span>
+											</ui:fragment>
+											
+											<ui:fragment rendered="#{cartController.actualTotalPrice gt 10000000}">
+									<span><h:outputText
+												value="0">
+												<f:convertNumber type="currency" locale="es_PY"
+													currencySymbol="" />
+											</h:outputText> VND</span>
+											</ui:fragment>
+								</div>
+							</div>
+							<div jsf:id="final-price" class="row final-price">
 								<div class="col s7">Tổng tiền</div>
-								<div class="col s5">16.450.000 VND</div>
+								<div class="col s5">
+									<span><h:outputText
+												value="#{cartController.actualTotalPrice != null ? cartController.actualTotalPrice + checkout.deliveryFee : 0 }">
+												<f:convertNumber type="currency" locale="es_PY"
+													currencySymbol="" />
+											</h:outputText> VND</span>
+								</div>
 							</div>
 							
 						</div>
-					</div>
-					<div class="row"
-							style="margin: 0; margin-top: 26px; text-align: center">
-							<h:outputLink value="#{request.contextPath}/thanh-toan/phuong-thuc-thanh-toan" styleClass="purchase">tiếp tục</h:outputLink>
 					</div>
 				</div>
 			</div>

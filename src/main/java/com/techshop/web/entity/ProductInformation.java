@@ -3,7 +3,7 @@ package com.techshop.web.entity;
 import java.util.List;
 
 public class ProductInformation {
-	
+	private Long id;
 	private String productName;
 	private String alias;
 	private String descriptionHTML;
@@ -14,6 +14,12 @@ public class ProductInformation {
 	private List<SpecificationInformation> specificationInfos;
 	private Long manufacturerId;
 	private Long categoryId;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getProductName() {
 		return productName;
 	}

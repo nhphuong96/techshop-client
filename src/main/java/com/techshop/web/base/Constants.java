@@ -10,6 +10,10 @@ public class Constants {
 	public static final String MANUFACTURER = "/manufacturer";
 	public static final String PRODUCT = "/product";
 	public static final String SPECIFICATION_TYPE = "/specificationtype";
+	public static final String ORDER = "/order";
+	public static final String CUSTOMER = "/customer";
+	public static final String PAYMENT = "/payment";
+	public static final String CHECKOUT = "/checkout";
 	
 	/** API */
 	public static final String GET_ALL = "/getAll";

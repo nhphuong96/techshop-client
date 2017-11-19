@@ -128,3 +128,20 @@ thead {
 	font-size: 16px;
 	font-weight: 600;
 }
+
+.error-message {
+	font-size: 12px;
+	color: red;
+}
+
+.form-wrapper .delivery-item td {
+	float: left;
+	width: 50%;
+	padding-left: 10px;
+}
+
+.form-wrapper .delivery-item label {
+	padding: 0;
+	padding-left: 35px;
+	float: left;
+}
